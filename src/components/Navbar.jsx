@@ -59,7 +59,7 @@ const Navbar = () => {
             </Box>
             <Box onClick={handleSearch}>
               {cancel ? (
-                <MdCancel style={{ height: "25px", width: "25px" }}/>
+                <MdCancel style={{ height: "25px", width: "25px" }} />
               ) : (
                 <BiSearch style={{ height: "25px", width: "25px" }} />
               )}
