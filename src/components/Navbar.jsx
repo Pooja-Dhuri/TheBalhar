@@ -14,12 +14,13 @@ const Navbar = () => {
     setCancel(!cancel);
   };
   return (
-    <Box>
+    <Box w={"100%"}>
       <HStack
         // border={"1px solid red"}
         height={"100px"}
         justifyContent={"space-around"}
         borderBottom={"1px solid black"}
+        w={"100%"}
       >
         {/* left side logo */}
         <Box
