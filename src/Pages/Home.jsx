@@ -151,18 +151,20 @@ export default function Home() {
     </Box>
 
     {/* intro div */}
-    <HStack>
-      <Box>
-        <Text>Welcome To TheBalhaar</Text>
+    <HStack my={"20px"} px={"100px"} justifyContent={"space-around"} alignItems={"center"}>
+      <Box textAlign={"left"}>
+        <Text fontSize={"32px"}  fontWeight={600}>Welcome To TheBalhaar</Text>
         <Text>
         A trove of the tana and bana by Indian weavers and craftspeople. Shop <br /> the handcrafted products Sarees | Suits | Jewellery | Stoles, curated and <br/> handpicked pieces from all across the country. <br /><br />
-        The aesthetic collection from- TheBalhaar
+        The aesthetic collection from- <span style={{color:"black",fontWeight:700}}>TheBalhaar</span> 
         </Text>
       </Box>
-      <Box>
-        <Image src='https://cdn.shopaccino.com/thebalhaar/images/main-pic-377602.jpg'/>
+      <Box h={"600px"} p={"30px"} >
+        <Image src='https://cdn.shopaccino.com/thebalhaar/images/main-pic-377602.jpg' h={"100%"} borderTopRightRadius={"50px"} borderBottomLeftRadius={"50px"}/>
       </Box>
     </HStack>
+
+    
     </>
   );
 }
