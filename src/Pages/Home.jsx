@@ -11,6 +11,7 @@ import {
   HStack,
   Grid,
   GridItem,
+  Button,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -79,36 +80,64 @@ export default function Home() {
     },
   ];
 
-  const products=[
+  const products = [
     {
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/img7838-2-177910_s.jpg?v=457?1427392910",
-      title:"SAREES",
-    },
-    { 
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/img7841-3-748645_s.jpg?v=457?1427392910",
-      title:"SUITS",
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/img7838-2-177910_s.jpg?v=457?1427392910",
+      title: "SAREES",
     },
     {
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark03-03-202107-46-15pm-100984_s.jpg?v=457?1427392910",
-      title:"DUPATTA|STOLE",
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/img7841-3-748645_s.jpg?v=457?1427392910",
+      title: "SUITS",
     },
     {
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/img7839-2-833055_s.jpg?v=457?1427392910",
-      title:"JEWELRY",
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark03-03-202107-46-15pm-100984_s.jpg?v=457?1427392910",
+      title: "DUPATTA|STOLE",
     },
     {
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark19-07-202107-04-34pm-2-168103_s.jpg?v=457?1427392910",
-      title:"KAFTAN",
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/img7839-2-833055_s.jpg?v=457?1427392910",
+      title: "JEWELRY",
     },
     {
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark16-01-202312-34-29pm-399232_s.jpg?v=457?1427392910",
-      title:"FABRIC",
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark19-07-202107-04-34pm-2-168103_s.jpg?v=457?1427392910",
+      title: "KAFTAN",
     },
     {
-      image:"https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark01-04-202305-50-34pm-2-1-268094_s.jpg?v=457?1427392910",
-      title:"BAGS",
-    }
-  ]
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark16-01-202312-34-29pm-399232_s.jpg?v=457?1427392910",
+      title: "FABRIC",
+    },
+    {
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/categories/ezy-watermark01-04-202305-50-34pm-2-1-268094_s.jpg?v=457?1427392910",
+      title: "BAGS",
+    },
+  ];
+
+  const sale = [
+    {
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/products/ezy-watermark22-11-202109-20-48pm-538196_m.jpg?v=457",
+      title: "|RED|",
+      price: "4,100",
+    },
+    {
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/products/ezy-watermark30-04-202108-24-21pm-888262_m.jpg?v=457",
+      title: "FIROZI LEHERIYA",
+      price: "2,800",
+    },
+    {
+      image:
+        "https://cdn.shopaccino.com/thebalhaar/products/ezy-watermark30-04-202108-22-23pm-976269_m.jpg?v=457",
+      title: "YELLOW LEHERIYA",
+      price: "2,800",
+    },
+  ];
 
   return (
     <>
@@ -117,7 +146,8 @@ export default function Home() {
         height={"600px"}
         width={"full"}
         overflow={"hidden"}
-        mt={"20px"}
+        mt={"120px"}
+        zIndex={2}
       >
         {/* CSS files for react-slick */}
         <link
@@ -167,6 +197,7 @@ export default function Home() {
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
+              zIndex={2}
               backgroundImage={`url(${card.imageUrl})`}
             >
               {/* This is the block you need to change, to customize the caption */}
@@ -227,22 +258,26 @@ export default function Home() {
 
       {/* All products div */}
       <Grid templateColumns="repeat(3, 1fr)" gap={6} w={"90%"} m={"auto"}>
-      {products.map((pro, index) => (
-        <GridItem height={"500px"} w={"400px"} >
-          <Box key={index}
-          // _hover={{WebkitTransform:"scale(1.1)", transition: "0.5s ease",transfrom:"scale(1.5)" , msTransform:"scale(1.5)"}}
+        {products.map((pro, index) => (
+          <GridItem height={"500px"} w={"400px"}>
+            <Box
+              key={index}
+              className="my-image-class"
+              _hover={{backgroundSize:"120%"}}
               position="relative"
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
               h={"full"}
               cursor={"pointer"}
-              backgroundImage={`url(${pro.image})`}>
-          <Container size="container.lg" height="600px" position="relative">
+              overflow={"hidden"}
+              backgroundImage={`url(${pro.image})`}
+              transition="background-size 0.5s ease"
+            >
+              <Container size="container.lg" height="600px" position="relative">
                 <Stack
                   spacing={6}
                   w={"full"}
-                  
                   color={"white"}
                   maxW={"lg"}
                   position="absolute"
@@ -255,12 +290,99 @@ export default function Home() {
                   </Heading>
                 </Stack>
               </Container>
-          </Box>
-        </GridItem>
-         ))}
+            </Box>
+          </GridItem>
+        ))}
       </Grid>
 
-      {/* three sarees */}
+      {/* sales */}
+      <Text fontWeight={500} fontSize={"40px"} mt={"40px"} mb={"40px"}>
+        SALE
+      </Text>
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        gap={6}
+        w={"80%"}
+        m={"auto"}
+        // border={"1px solid red"}
+      >
+        {sale.map((pro, index) => (
+          <GridItem height={"500px"}>
+            <Box
+              key={index}
+              _hover={{backgroundSize:"120%"}}
+              position="relative"
+              backgroundPosition="center"
+              backgroundRepeat="no-repeat"
+              backgroundSize="cover"
+              overflow={"hidden"}
+              height={"450px"}
+              cursor={"pointer"}
+              backgroundImage={`url(${pro.image})`}
+              transition="background-size 0.5s ease"
+            >
+              <HStack pt="115%" justifyContent="center">
+                <Button
+                  backgroundImage="linear-gradient(to left,#343a40, rgba(128, 128, 128, 0.5))"
+                  backgroundSize="200% 100%"
+                  transition="background-position 0.5s"
+                  h={"30px"}
+                  width={"200px"}
+                  borderRadius={"0px"}
+                  _hover={{
+                    border: "1px solid #323232",
+                    backgroundPosition: "-100% 0",
+                    color: "black",
+                  }}
+                  color={"white"}
+                  backgroundColor={"transparent"}
+                >
+                  {" "}
+                  + Quick View
+                </Button>
+                <Button
+                  backgroundImage="linear-gradient(to left,#343a40, rgba(128, 128, 128, 0.5))"
+                  backgroundSize="200% 100%"
+                  transition="background-position 0.5s"
+                  h={"30px"}
+                  width={"70px"}
+                  borderRadius={"0px"}
+                  color={"white"}
+                  backgroundColor={"transparent"}
+                  _hover={{
+                    color: "#323232",
+                    backgroundPosition: "-100% 0",
+                    border: "1px solid #323232",
+                  }}
+                >
+                  like
+                </Button>
+              </HStack>
+            </Box>
+            <Box>
+              <Text>{pro.title}</Text>
+              <Text color={"red"}>₹{pro.price}</Text>
+            </Box>
+          </GridItem>
+        ))}
+      </Grid>
+      <Box mt={"20px"}>
+        <Button
+          backgroundImage="linear-gradient(to left,#343a40, rgba(128, 128, 128, 0.5))"
+          backgroundSize="200% 100%"
+          transition="background-position 0.5s"
+          borderRadius={"0px"}
+          backgroundColor={"#343a40"}
+          color={"white"}
+          _hover={{
+            color:"black",
+            backgroundPosition: "-100% 0",
+            border: "1px solid #323232",
+          }}
+        >
+          VIEW ALL PRODUCTS
+        </Button>
+      </Box>
     </>
   );
 }

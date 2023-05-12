@@ -14,7 +14,7 @@ const Navbar = () => {
     setCancel(!cancel);
   };
   return (
-    <Box w={"100%"}>
+    <Box w={"100%"} position={"fixed"} top={0} zIndex={9999} bg={"white"}>
       <HStack
         // border={"1px solid red"}
         height={"100px"}
