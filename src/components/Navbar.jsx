@@ -1,19 +1,38 @@
 import React, { useState } from "react";
-import { Box, HStack, Image, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Image,
+  Input,
+  Text,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { FiShoppingBag } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { MdCancel } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [search, setSearch] = useState("none");
   const [cancel, setCancel] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
 
   const handleSearch = () => {
     setSearch("block");
     setCancel(!cancel);
   };
   return (
+    <>
     <Box w={"100%"} position={"fixed"} top={0} zIndex={9999} bg={"white"}>
       <HStack
         // border={"1px solid red"}
@@ -41,10 +60,16 @@ const Navbar = () => {
           cursor={"pointer"}
         >
           <HStack justifyContent={"space-around"} gap={"40px"}>
-            <Text>HOME</Text>
-            <Text>SALE</Text>
+            <Link to="/">
+              <Text>HOME</Text>
+            </Link>
+            <Link to="/sale">
+              <Text>SALE</Text>
+            </Link>
             <Text>SHOP</Text>
-            <Text>CONTACT US</Text>
+            <Link to="/contactus">
+              <Text>CONTACT US</Text>
+            </Link>
           </HStack>
         </Box>
 
@@ -56,7 +81,9 @@ const Navbar = () => {
         >
           <HStack justifyContent={"space-around"} gap={"20px"}>
             <Box>
-              <AiOutlineUser style={{ height: "25px", width: "25px" }} />
+              <Link to="/signin">
+                <AiOutlineUser style={{ height: "25px", width: "25px" }} />
+              </Link>
             </Box>
             <Box onClick={handleSearch}>
               {cancel ? (
@@ -80,7 +107,11 @@ const Navbar = () => {
                 0
               </Box>
               <Box position={"absolute"}>
-                <FiShoppingBag style={{ height: "25px", width: "25px" }} />
+                <FiShoppingBag
+                  ref={btnRef}
+                  style={{ height: "25px", width: "25px" }}
+                  onClick={onOpen}
+                />
               </Box>
             </HStack>
           </HStack>
@@ -96,7 +127,32 @@ const Navbar = () => {
           <BiSearch style={{ height: "25px", width: "25px" }} />
         </HStack>
       </Box>
+      <Drawer
+    isOpen={isOpen}
+    placement="right"
+    onClose={onClose}
+    finalFocusRef={btnRef}
+  >
+    <DrawerOverlay />
+    <DrawerContent>
+      <DrawerCloseButton />
+      <DrawerHeader>Create your account</DrawerHeader>
+
+      <DrawerBody>
+        <Input placeholder="Type here..." />
+      </DrawerBody>
+
+      <DrawerFooter>
+        <Button variant="outline" mr={3} onClick={onClose}>
+          Cancel
+        </Button>
+        <Button colorScheme="blue">Save</Button>
+      </DrawerFooter>
+    </DrawerContent>
+  </Drawer>
     </Box>
+    
+  </>
   );
 };
 
