@@ -5,18 +5,22 @@ import {
   Image,
   Input,
   Text,
- 
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
 } from "@chakra-ui/react";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { MdCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Draver from "./Drawer";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   const [search, setSearch] = useState("none");
   const [cancel, setCancel] = useState(false);
-  
 
   const handleSearch = () => {
     setSearch("block");
@@ -24,7 +28,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <Box w={"100%"} position={"fixed"} top={0} zIndex={1} bg={"white"}>
+      <Box w={"100%"} position={"sticky"} top={0} zIndex={1} bg={"white"}>
         <HStack
           // border={"1px solid red"}
           height={"100px"}
@@ -37,18 +41,35 @@ const Navbar = () => {
             w={"250px"}
             // border={"1px solid green"}
             cursor={"pointer"}
+            display={["none", "none", "block", "block"]}
           >
             <Image
               src="https://cdn.shopaccino.com/thebalhaar/images/logo-362822_header_logo.jpg?v=457?v=1"
               alt="logo"
             />
           </Box>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+              display={["block", "block", "none", "none"]}
+            />
+            <MenuList>
+              <MenuItem command="⌘T">New Tab</MenuItem>
+              <MenuItem command="⌘N">New Window</MenuItem>
+              <MenuItem command="⌘⇧N">Open Closed Tab</MenuItem>
+              <MenuItem command="⌘O">Open File...</MenuItem>
+            </MenuList>
+          </Menu>
 
           {/* middle  components */}
           <Box
-            //  border={"1px solid green"}
+            // border={"1px solid green"}
             fontWeight={600}
             cursor={"pointer"}
+            display={["none", "none", "block", "block"]}
           >
             <HStack justifyContent={"space-around"} gap={"40px"}>
               <Link to="/">
@@ -63,6 +84,18 @@ const Navbar = () => {
               </Link>
             </HStack>
           </Box>
+          <Box
+            w={["210px", "210px", "200px", "250px"]}
+            // border={"1px solid green"}
+            cursor={"pointer"}
+            display={["block", "block", "none", "none"]}
+          >
+            <Image
+              src="https://cdn.shopaccino.com/thebalhaar/images/logo-362822_header_logo.jpg?v=457?v=1"
+              alt="logo"
+              w={"full"}
+            />
+          </Box>
 
           {/* right login cart buttons */}
           <Box
@@ -70,8 +103,11 @@ const Navbar = () => {
             fontWeight={600}
             cursor={"pointer"}
           >
-            <HStack justifyContent={"space-around"} gap={"20px"}>
-              <Box>
+            <HStack
+              justifyContent={"space-around"}
+              gap={["15px", "15px", "10px", "20px"]}
+            >
+              <Box display={["none", "none", "block", "block"]}>
                 <Link to="/signin">
                   <AiOutlineUser style={{ height: "25px", width: "25px" }} />
                 </Link>
@@ -97,8 +133,8 @@ const Navbar = () => {
                 >
                   0
                 </Box>
-                <Box position={"absolute"} >
-                  <Draver/>
+                <Box position={"absolute"}>
+                  <Draver />
                 </Box>
               </HStack>
             </HStack>
@@ -108,7 +144,7 @@ const Navbar = () => {
           <HStack
             borderBottom={"1px solid grey"}
             h={"60px"}
-            w={"40%"}
+            w={["100%","100%","50%","40%"]}
             m={"auto"}
           >
             <Input
@@ -119,7 +155,6 @@ const Navbar = () => {
             <BiSearch style={{ height: "25px", width: "25px" }} />
           </HStack>
         </Box>
-        
       </Box>
     </>
   );

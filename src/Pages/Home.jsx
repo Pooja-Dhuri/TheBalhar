@@ -146,8 +146,7 @@ export default function Home() {
         height={"600px"}
         width={"full"}
         overflow={"hidden"}
-        mt={"120px"}
-        zIndex={2}
+        mt={"20px"}
       >
         {/* CSS files for react-slick */}
         <link
