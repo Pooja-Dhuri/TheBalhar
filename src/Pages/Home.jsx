@@ -191,6 +191,7 @@ export default function Home() {
           {images.map((card, index) => (
             <Box
               key={index}
+              w={"full"}
               height={"600px"}
               position="relative"
               backgroundPosition="center"
@@ -227,12 +228,13 @@ export default function Home() {
       {/* intro div */}
       <HStack
         my={"20px"}
-        px={"100px"}
-        justifyContent={"space-around"}
+        px={["10px","10px","100px","100px"]}
+        flexDirection={["column","column","row","row"]}
+        justifyContent={["center","center","space-arounnd","space-around"]}
         alignItems={"center"}
       >
         <Box textAlign={"left"}>
-          <Text fontSize={"32px"} fontWeight={600}>
+          <Text fontSize={["25px","25px","25px","32px"]} fontWeight={600}>
             Welcome To TheBalhaar
           </Text>
           <Text>
@@ -245,7 +247,7 @@ export default function Home() {
             <span style={{ color: "black", fontWeight: 700 }}>TheBalhaar</span>
           </Text>
         </Box>
-        <Box h={"600px"} p={"30px"}>
+        <Box h={["300px","300px","400px","600px"]} w={"100%"} p={["5px","0px","15px","30px"]}>
           <Image
             src="https://cdn.shopaccino.com/thebalhaar/images/main-pic-377602.jpg"
             h={"100%"}
@@ -256,9 +258,9 @@ export default function Home() {
       </HStack>
 
       {/* All products div */}
-      <Grid templateColumns="repeat(3, 1fr)" gap={6} w={"90%"} m={"auto"}>
+      <Grid templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]} gap={6} w={"90%"} m={"auto"}>
         {products.map((pro, index) => (
-          <GridItem height={"500px"} w={"400px"}>
+          <GridItem height={["450px","450px","450px","500px"]} w={["auto","auto","auto","400px"]}>
             <Box
               key={index}
               className="my-image-class"
@@ -299,7 +301,7 @@ export default function Home() {
         SALE
       </Text>
       <Grid
-        templateColumns="repeat(3, 1fr)"
+        templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]}
         gap={6}
         w={"80%"}
         m={"auto"}

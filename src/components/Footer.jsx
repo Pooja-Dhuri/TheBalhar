@@ -6,7 +6,7 @@ import { MdOutlinePortrait } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <Box borderTop={"1px solid black"} height={"auto"} mt={"20px"} p={"40px"}>
+    <Box borderTop={"1px solid black"} height={"auto"} mt={"20px"} p={["0px","0px","10px","40px"]}>
       <HStack
         height={"300px"}
         w={"90%"}
@@ -27,19 +27,19 @@ const Footer = () => {
             </Box>
           </HStack>
         </Box>
-        <Box textAlign={"left"}>
+        <Box textAlign={"left"} display={["none","none","none","block"]}>
           <Text fontWeight={600} fontSize={"20px"} lineHeight={10}>
             Information
           </Text>
           <Text fontSize={"20px"}>International Shipping</Text>
         </Box>
-        <Box textAlign={"left"}>
+        <Box textAlign={"left"} display={["none","none","none","block"]}>
           <Text fontWeight={600} fontSize={"20px"} lineHeight={10}>
             Our Company
           </Text>
           <Text fontSize={"20px"}>Testimonials</Text>
         </Box>
-        <Box textAlign={"left"}>
+        <Box textAlign={"left"} display={["none","none","none","block"]}>
           <Text fontWeight={600} fontSize={"20px"} lineHeight={10}>
             Customer Service
           </Text>
