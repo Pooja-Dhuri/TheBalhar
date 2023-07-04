@@ -11,18 +11,18 @@ const SignUp = () => {
 
   return (
     <Box mt={"150px"}>
-      <HStack w={"80%"} m={"auto"} gap={"50px"}>
+      <HStack w={"80%"} m={"auto"} gap={"50px"} flexDirection={["column","column","column","row"]}>
         <Box textAlign={"left"}>
           <Text ml={"20px"} fontSize={"35px"} fontWeight={"500"}>Create an account</Text>
-          <HStack gap={"30px"} p={"20px"}>
+          <HStack gap={"30px"} p={"20px"} flexDirection={["column","column","row","row"]}>
             <Input placeholder="Email" w={"300px"} height={"45px"} borderRadius={"0px"}/>
             <Input placeholder="Password" w={"300px"} height={"45px"} borderRadius={"0px"}  />
           </HStack>
-          <HStack gap={"30px"} p={"20px"}>
+          <HStack gap={"30px"} p={"20px"} flexDirection={["column","column","row","row"]}>
             <Input placeholder="First Name" w={"300px"} height={"45px"} borderRadius={"0px"} />
             <Input placeholder="Last Name" w={"300px"} height={"45px"} borderRadius={"0px"} />
           </HStack>
-          <HStack gap={"30px"} p={"20px"}>
+          <HStack gap={"30px"} p={"20px"} flexDirection={["column","column","row","row"]}>
             <Input placeholder="Mobile" w={"300px"} height={"45px"} borderRadius={"0px"} />
             <select name="" id="" style={{width:"300px",height:"45px"}}>
               <option value="India">India</option>

@@ -57,11 +57,12 @@ const Navbar = () => {
               display={["block", "block", "none", "none"]}
             />
             <MenuList>
-              <MenuItem command="⌘T">New Tab</MenuItem>
-              <MenuItem command="⌘N">New Window</MenuItem>
-              <MenuItem command="⌘⇧N">Open Closed Tab</MenuItem>
-              <MenuItem command="⌘O">Open File...</MenuItem>
+              <Link to={"/"}><MenuItem>HOME</MenuItem></Link> 
+              <Link to="/sale"><MenuItem>SALE</MenuItem></Link>
+              {/* <Link to={"/"}><MenuItem>SHOP</MenuItem></Link> */}
+              <Link to="/contactus"><MenuItem>Contact-US</MenuItem></Link>
             </MenuList>
+            
           </Menu>
 
           {/* middle  components */}

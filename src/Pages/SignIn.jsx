@@ -27,14 +27,14 @@ export default function SignIn() {
     navigate("/signup")
   }
   return (
-    <Box mt={"150px"}>
-      <HStack w={"80%"} m={"auto"} gap={"50px"}>
+    <Box mt={["80px","80px","100px","150px"]}>
+      <HStack w={"80%"} m={"auto"} gap={["0px","0px","50px","50px"]} flexDirection={["column","column","row","row"]}>
         <Stack spacing={8} mx={"auto"} px={6} textAlign={"left"}>
           <Heading fontSize={"4xl"}>Login</Heading>
           <Box>
             <Stack spacing={4}>
               <FormControl id="email">
-                <Input type="email" placeholder="Email" borderRadius={"0px"} w={"400px"}/>
+                <Input type="email" placeholder="Email" borderRadius={"0px"} w={["250px","250px","350px","400px"]}/>
               </FormControl>
               <FormControl id="password">
                 <InputGroup>
@@ -42,7 +42,7 @@ export default function SignIn() {
                     type={showPassword ? "text" : "password"}
                     placeholder="password"
                     borderRadius={"0px"}
-                    w={"400px"}
+                    w={["250px","250px","350px","400px"]}
                   />
                   <InputRightElement h={"full"}>
                     <Button
@@ -56,11 +56,11 @@ export default function SignIn() {
                   </InputRightElement>
                 </InputGroup>
               </FormControl>
-              <Stack spacing={10}>
+              <Stack spacing={[5,5,8,10]}>
                 <Button
                   bg={"#323232"}
                   color={"white"}
-                  w={"400px"}
+                  w={["250px","250px","350px","400px"]}
                   borderRadius={"0px"}
                   _hover={{
                     bg: "#323232",

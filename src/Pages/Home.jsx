@@ -228,26 +228,27 @@ export default function Home() {
       {/* intro div */}
       <HStack
         my={"20px"}
-        px={["10px","10px","100px","100px"]}
+        px={["10px","10px","100px","200px"]}
         flexDirection={["column","column","row","row"]}
-        justifyContent={["center","center","space-arounnd","space-around"]}
+        justifyContent={"space-around"}
         alignItems={"center"}
+        gap={["0px","0px","200px",'200px']}
       >
         <Box textAlign={"left"}>
-          <Text fontSize={["25px","25px","25px","32px"]} fontWeight={600}>
+          <Text fontSize={["25px","25px","25px","42px"]} fontWeight={600}>
             Welcome To TheBalhaar
           </Text>
-          <Text>
+          <Text fontSize={["15px","15px","18px","22px"]}>
             A trove of the tana and bana by Indian weavers and craftspeople.
-            Shop <br /> the handcrafted products Sarees | Suits | Jewellery |
-            Stoles, curated and <br /> handpicked pieces from all across the
+            Shop the handcrafted products Sarees | Suits | Jewellery |
+            Stoles, curated and handpicked pieces from all across the
             country. <br />
             <br />
             The aesthetic collection from-{" "}
             <span style={{ color: "black", fontWeight: 700 }}>TheBalhaar</span>
           </Text>
         </Box>
-        <Box h={["300px","300px","400px","600px"]} w={"100%"} p={["5px","0px","15px","30px"]}>
+        <Box h={["300px","300px","400px","450px"]} w={"100%"} p={["5px","0px","15px","30px"]}>
           <Image
             src="https://cdn.shopaccino.com/thebalhaar/images/main-pic-377602.jpg"
             h={"100%"}
@@ -322,7 +323,7 @@ export default function Home() {
               backgroundImage={`url(${pro.image})`}
               transition="background-size 0.5s ease"
             >
-              <HStack pt="115%" justifyContent="center">
+              <HStack pt="105%" justifyContent="center">
                 <Button
                   backgroundImage="linear-gradient(to left,#343a40, rgba(128, 128, 128, 0.5))"
                   backgroundSize="200% 100%"
