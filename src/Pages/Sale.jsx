@@ -1,6 +1,7 @@
 import { Box, Grid, GridItem, HStack, Heading, Select, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const Sale = () => {
   const [products, setProducts] = useState([]);
 
@@ -26,7 +27,7 @@ const Sale = () => {
           <option value="option2">Option 2</option>
           <option value="option3">Option 3</option>
         </Select></HStack>
-      <Grid
+        <Grid
         templateColumns={[
           "repeat(1, 1fr)",
           "repeat(1, 1fr)",
@@ -36,11 +37,12 @@ const Sale = () => {
         gap={6}
         w={"80%"}
         m={"auto"}
+    
         // border={"1px solid red"}
       >
         {products.map((e) => (
           <GridItem height={"500px"}>
-            <Box
+            <Link to={`/singlesale/${e.id}`}><Box
               key={e.id}
               _hover={{ backgroundSize: "120%" }}
               position="relative"
@@ -90,7 +92,7 @@ const Sale = () => {
                   like
                 </Button>
               </HStack> */}
-            </Box>
+            </Box></Link>
             <Box>
               <Text>{e.name}</Text>
               <Text>₹{e.price}</Text>
