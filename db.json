@@ -400,5 +400,17 @@
       "img3": "",
       "img4": ""
     }
+  ],
+  "CartData": [
+    {
+      "id": 24,
+      "image": "https://cdn.shopaccino.com/thebalhaar/products/b7a35591-4046-4b8b-b6a0-2f6c286f9afc-852073_m.jpeg?v=461",
+      "name": "INDIGO MODAL DUPATTA #1",
+      "price": 2290,
+      "img1": "https://cdn.shopaccino.com/thebalhaar/products/a98d25e6-0815-49dd-8ef5-a696dbb2e81b-167759_m.jpeg?v=461",
+      "img2": "https://cdn.shopaccino.com/thebalhaar/products/1178569a-0590-4f17-9c0a-4d73e609b4fb-839873_m.jpeg?v=461",
+      "img3": "https://cdn.shopaccino.com/thebalhaar/products/14af85ca-d097-4c5e-847b-423a03233689-532121_m.jpeg?v=461",
+      "img4": "https://cdn.shopaccino.com/thebalhaar/products/fcff0726-f05c-4755-9cbb-6bd610a86b5d-558134_m.jpeg?v=461"
+    }
   ]
 }

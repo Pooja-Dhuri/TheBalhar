@@ -2,6 +2,7 @@ import { Box, Button, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router";
 import { Reducer, dec, inc } from "../Reducer/Reducer";
+import axios from "axios";
 
 const SingleSale = () => {
   const { id } = useParams();
@@ -23,6 +24,15 @@ const SingleSale = () => {
     }
   }, [id]);
 
+  
+  const handleCart=async()=>{
+    try {
+      const response = await axios.post('http://localhost:8080/CartData', product);
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
   const renderSelectedImage = () => {
     if (selectedImage) {
       return (
@@ -113,6 +123,7 @@ const SingleSale = () => {
                 color={"white"}
                 border={"1px solid #343a40"}
                 borderRadius={"0px"}
+                onClick={handleCart}
               >
                 ADD TO CART
               </Button>
