@@ -1,6 +1,6 @@
 import { Box, Button, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useReducer, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Reducer, dec, inc } from "../Reducer/Reducer";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ const SingleSale = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [state, dispatch] = useReducer(Reducer, { count: 1 });
+  const navigate=useNavigate()
 
   const [selectedImage, setSelectedImage] = useState("");
   let  total=(product.price)*(state.count);
@@ -29,10 +30,16 @@ const SingleSale = () => {
     try {
       const response = await axios.post('http://localhost:8080/CartData', product);
       console.log('Response:', response.data);
+      alert(`data is added to`)
     } catch (error) {
       console.error('Error:', error);
     }
   }
+
+  const handleBuy=()=>{
+    navigate("/cart")
+  }
+
   const renderSelectedImage = () => {
     if (selectedImage) {
       return (
@@ -134,6 +141,7 @@ const SingleSale = () => {
                 backgroundColor={"white"}
                 border={"1px solid #343a40"}
                 borderRadius={"0px"}
+                onClick={handleBuy}
               >
                 BUY IT NOW
               </Button>
