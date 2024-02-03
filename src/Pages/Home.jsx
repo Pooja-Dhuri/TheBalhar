@@ -329,7 +329,7 @@ export default function Home() {
                   backgroundSize="200% 100%"
                   transition="background-position 0.5s"
                   h={"30px"}
-                  width={"200px"}
+                  width={["100px","100px","100px","100px","200px"]}
                   borderRadius={"0px"}
                   _hover={{
                     border: "1px solid #323232",

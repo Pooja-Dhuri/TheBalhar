@@ -9,6 +9,7 @@ import Sale from './Pages/Sale';
 import Contact from './Pages/Contact';
 import SingleSale from './Pages/SingleSale';
 import Cart from './Pages/Cart';
+import ProductList from './example';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Navbar/>
       <Routes>
            <Route path='/' element={<Home/>}/>
-           <Route path='/sale'element={<Sale/>}/>
+           <Route path='/sale'element={<Sale />}/>
            <Route path="singlesale/:id" element={<SingleSale/>}/>
            <Route path='/signup' element={<SignUp/>}/>
            <Route path="/signin" element={<SignIn/>}/>
@@ -24,6 +25,7 @@ function App() {
            <Route path='/cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
+      {/* <ProductList/> */}
     </div>
   );
 }
