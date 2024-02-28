@@ -157,7 +157,7 @@ const Sale = () => {
           </GridItem>
         ))}
       </Grid>
-      <div>
+      {/* <div>
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -171,7 +171,7 @@ const Sale = () => {
         >
           Next Page
         </button>
-      </div>
+      </div> */}
     </Box>
   );
 };
